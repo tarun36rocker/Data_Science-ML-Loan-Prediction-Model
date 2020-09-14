@@ -3,49 +3,74 @@
 <!--From https://codepen.io/frytyler/pen/EGdtg-->
 <head>
   <meta charset="UTF-8">
-  <title>ML API</title>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-  
+  <title>Loan Prediction</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 </head>
 
-<body background="https://dxlm84u5gf2hs.cloudfront.net/wp-content/uploads/2019/03/Depositphotos_51276349_l-2015-1024x984.jpg">
- <div class="login">
-	 <b><i><u><h1 style="text-align:center">Machine Learning Loan Prediction Model </h1></i></b></u></font>
+<body style="background-color: rgb(141, 194, 148)">
+  <div class="container-1">
+    <div class="box-main" >
+    <p style="color:darkolivegreen";align:"center"><h1>
+        Loan Prediction Model</p>
+    </h1></p>
+    </div>
+</div>   
+<div class="container-2">
+  <div class="box-1">
+    <img class="sticky" src="pic5.jpg">
+  </div>
+ <div class="box-2">
+    <form action="{{ url_for('predict')}}"method="post" class="form-inputs">
+      <div class="form-inputs ui large icon input">
+        <div class="ui pointing below label">
+          <p>General Instructions : </p>
+          If (Yes/No) option is present : 1 for YES , 0 for NO
+        </div> 
+    	<input type="text" name="Dependents" placeholder="Dependents" required="required" />
+      </div> 
+      <div class="form-inputs ui large icon input">
+        <input type="text" name="test_score" placeholder="Applicant Income" required="required" /> 
+      </div>
+        <div class="form-inputs ui large icon input">
+		<input type="text" name="interview_score" placeholder="Co applicant Income" required="required" />
+        </div>
+        <div class="form-inputs ui large icon input">
+		<input type="text" name="LoanAmount" placeholder="Loan Amount" required="required" />
+  </div>
+  <div class="form-inputs ui large icon input">
+		<input type="text" name="Loan_Amount_Term" placeholder="Loan Amount Term" required="required" />
+  </div>
+  <div class="form-inputs ui large icon input">
+		<input type="text" name="Credit_History" placeholder="Credit History" required="required" />
+  </div>
+  <div class="form-inputs ui large icon input">
+		<input type="text" name="Gender_Male" placeholder="Gender Male (YES/NO)" required="required" />
+  </div>
+  <div class="form-inputs ui large icon input">
+		<input type="text" name="Married_Yes" placeholder="Married (YES/NO) " required="required" />
+  </div>
+  <div class="form-inputs ui large icon input">
+		<input type="text" name="Education_Graduate" placeholder="Education Graduate (YES/NO)" required="required" />
+  </div>
+  <div class="form-inputs ui large icon input">
 
-     <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="Dependents" placeholder="Dependents" required="required" /><br />
-	<br />    
-        <input type="text" name="test_score" placeholder="ApplicantIncome" required="required" /><br />
-	    <br />
-		<input type="text" name="interview_score" placeholder="CoapplicantIncome" required="required" /><br />
-	    <br />
-		<input type="text" name="LoanAmount" placeholder="LoanAmount" required="required" /><br />
-	    <br />
-		<input type="text" name="Loan_Amount_Term" placeholder="Loan_Amount_Term" required="required" /><br />
-	    <br />
-		<input type="text" name="Credit_History" placeholder="Credit_History" required="required" /><br />
-	    <br />
-		<input type="text" name="Gender_Female" placeholder="Gender_Female" required="required" /><br />
-	    <br />
-		<input type="text" name="Married_No" placeholder="Married_No" required="required" /><br />
-	    <br />
-		<input type="text" name="Education_Graduate" placeholder="Education_Graduate" required="required" /><br />
-	    <br />
-		<input type="text" name="Self_Employed_No" placeholder="Self_Employed_No" required="required" /><br />
-	    <br />
-		<input type="text" name="Property_Area_Rural" placeholder="Property_Area_Rural" required="required" /><br />
-	    <br />
+		<input type="text" name="Self_Employed_Yes" placeholder="Self Employed (YES/NO)" required="required" />
+  </div>
+  <div class="form-inputs ui large icon input">
 
-        <button type="submit" class="btn btn-primary btn-block btn-large title="Click here to get your results!!"">Predict</button>
+    <input type="text" name="Property_Area_Urban" placeholder="Property Area Urban (YES/NO)" required="required" />
+  </div>
+    <br> 
+  <div class="form-button">
+    <button type="submit" class="ui secondary medium button" >Predict</button>
+     </div>   
     </form>
-
-   <br>
-   <br>
-   {{ prediction_text }}
+  
+  </div>
 
  </div>
 
