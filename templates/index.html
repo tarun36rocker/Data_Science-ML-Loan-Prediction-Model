@@ -1,4 +1,3 @@
-  
 <!DOCTYPE html>
 <html >
 <!--From https://codepen.io/frytyler/pen/EGdtg-->
@@ -12,25 +11,36 @@
   
 </head>
 
-<body>
+<body background="https://dxlm84u5gf2hs.cloudfront.net/wp-content/uploads/2019/03/Depositphotos_51276349_l-2015-1024x984.jpg">
  <div class="login">
-	<h1>Predict Loan Approval</h1>
+	 <b><i><u><h1 style="text-align:center">Machine Learning Loan Prediction Model </h1></i></b></u></font>
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="experience" placeholder="Dependents" required="required" />
-        <input type="text" name="test_score" placeholder="ApplicantIncome" required="required" />
-		<input type="text" name="interview_score" placeholder="CoapplicantIncome" required="required" />
-		<input type="text" name="interview_score" placeholder="LoanAmount" required="required" />
-		<input type="text" name="interview_score" placeholder="Loan_Amount_Term" required="required" />
-		<input type="text" name="interview_score" placeholder="Credit_History" required="required" />
-		<input type="text" name="interview_score" placeholder="Gender_Female" required="required" />
-		<input type="text" name="interview_score" placeholder="Married_No" required="required" />
-		<input type="text" name="interview_score" placeholder="Education_Graduate" required="required" />
-		<input type="text" name="interview_score" placeholder="Self_Employed_No" required="required" />
-		<input type="text" name="interview_score" placeholder="Property_Area_Rural" required="required" />
+    	<input type="text" name="Dependents" placeholder="Dependents" required="required" /><br />
+	<br />    
+        <input type="text" name="test_score" placeholder="ApplicantIncome" required="required" /><br />
+	    <br />
+		<input type="text" name="interview_score" placeholder="CoapplicantIncome" required="required" /><br />
+	    <br />
+		<input type="text" name="LoanAmount" placeholder="LoanAmount" required="required" /><br />
+	    <br />
+		<input type="text" name="Loan_Amount_Term" placeholder="Loan_Amount_Term" required="required" /><br />
+	    <br />
+		<input type="text" name="Credit_History" placeholder="Credit_History" required="required" /><br />
+	    <br />
+		<input type="text" name="Gender_Female" placeholder="Gender_Female" required="required" /><br />
+	    <br />
+		<input type="text" name="Married_No" placeholder="Married_No" required="required" /><br />
+	    <br />
+		<input type="text" name="Education_Graduate" placeholder="Education_Graduate" required="required" /><br />
+	    <br />
+		<input type="text" name="Self_Employed_No" placeholder="Self_Employed_No" required="required" /><br />
+	    <br />
+		<input type="text" name="Property_Area_Rural" placeholder="Property_Area_Rural" required="required" /><br />
+	    <br />
 
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        <button type="submit" class="btn btn-primary btn-block btn-large title="Click here to get your results!!"">Predict</button>
     </form>
 
    <br>
