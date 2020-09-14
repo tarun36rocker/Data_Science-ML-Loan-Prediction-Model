@@ -32,8 +32,8 @@ logmodel = LogisticRegression()
 logmodel.fit(X_train,y_train)
 
 # Saving model to disk
-pickle.dump(logmodel, open('model2.pkl','wb'))
+pickle.dump(logmodel, open('model.pkl','wb'))
 
 # Loading model to compare the results
-model = pickle.load(open('model2.pkl','rb'))
+model = pickle.load(open('model.pkl','rb'))
 print(model.predict([[1, 6065, 2004.0, 250.0, 360.0, 1.0, 0, 0, 1, 1, 0]]))
